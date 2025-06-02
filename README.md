@@ -1,2 +1,2 @@
-# Bright-Furniture
+# Bright-Furniture.
 E-Commerce Website
