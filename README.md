@@ -1,2 +1,2 @@
-# BrightFurniture_E-commerce_Website
+# BrightFurniture
 E-Commerce Website
