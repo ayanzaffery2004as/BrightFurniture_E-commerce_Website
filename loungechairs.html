@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bright Furniture - Products</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #F8F6F0;
+        background-size: cover;
+        padding: 20px;
+        color: #000;
+      }
+  
+      .navbar {
+        background: rgba(0, 0, 0, 0.75);
+        padding: 12px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-radius: 0 0 15px 15px;
+      }
+  
+      .navbar .logo {
+        font-size: 2rem;
+        font-weight: 900;
+        color: #f1c40f;
+        text-decoration: none;
+      }
+  
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        padding: 0;
+      }
+  
+      .navbar ul li a {
+    color: #eee;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(145deg, #2e2e2e, #1a1a1a);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  
+  .navbar ul li a:hover {
+    transform: rotateX(10deg) rotateY(10deg) scale(1.05);
+    box-shadow: 0 12px 20px rgba(255, 255, 255, 0.2), 0 4px 30px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(145deg, #FFE000, #00F3FF);
+    color: #000;
+  }
+  
+  
+      h2 {
+        text-align: center;
+        color: #000;
+        margin: 40px 0 10px;
+        text-shadow: 1px 1px 3px #000;
+      }
+  
+      .product-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .product-block {
+    width: 350px;
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+  .product-block img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .product-block h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+  }
+
+  .desc {
+    font-size: 0.95em;
+    margin: 5px 0;
+    color: #444;
+  }
+
+  .price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2e86de;
+    margin: 5px 0;
+  }
+
+  .add-to-cart {
+    background-color: #2e86de;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .add-to-cart:hover {
+    background-color: #1b4f9c;
+  }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">Bright Furniture</a>
+    <ul>
+      <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'service' %}">SERVICE</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'reviews' %}">REVIEWS</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'cart' %}">CART</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <h2>[LOUNGE CHAIRS]</h2>
+  <div class="product-section">
+    <div class="product-block">
+      <img src="https://avatars.mds.yandex.net/i?id=37e800d00c1de62b4b525d5be1bc6b2f_l-6977815-images-thumbs&ref=rim&n=13&w=1410&h=971" alt="Lounge Chair Model 1">
+      <h3>Model 1</h3>
+      <p class="desc">Modern lounge chair with breathable mesh and swivel base.</p>
+      <div class="price">₹4,999</div>
+      <button class="add-to-cart" data-name="Lounge Chair Model 1" data-price="4999">Add to Cart</button>
+    </div>
+
+    <div class="product-block">
+      <img src="https://cdn.gamma.app/zd0plk90c8ggwmy/generated-images/WjIuuFjPtzr0kq0lzqmxs.jpg" alt="Lounge Chair Model 2">
+      <h3>Model 2</h3>
+      <p class="desc">High-back leather chair with adjustable tilt and lumbar support.</p>
+      <div class="price">₹28,499</div>
+      <button class="add-to-cart" data-name="Lounge Chair Model 2" data-price="28499">Add to Cart</button>
+    </div>
+
+    <div class="product-block">
+      <img src="https://avatars.mds.yandex.net/i?id=824c3182487d11670d43afd7f8ac27b3_l-7744452-images-thumbs&ref=rim&n=13&w=1000&h=1000" alt="Lounge Chair Model 3">
+      <h3>Model 3</h3>
+      <p class="desc">Curved comfort chair in suede finish, ideal for relaxing corners.</p>
+      <div class="price">₹7,299</div>
+      <button class="add-to-cart" data-name="Lounge Chair Model 3" data-price="7299">Add to Cart</button>
+    </div>
+
+    <div class="product-block">
+        <img src="https://img.freepik.com/premium-photo/high-resolution-lounge-chair-isolated-white-background_899449-139073.jpg" alt="Lounge Chair Model 4">
+        <h3>Model 4</h3>
+        <p class="desc">Modern lounge chair in leather finish.</p>
+        <div class="price">₹18,999</div>
+        <button class="add-to-cart" data-name="Lounge Chair Model 4" data-price="18999">Add to Cart</button>
+      </div>
+  
+      <div class="product-block">
+        <img src="https://th.bing.com/th/id/OIP.EsiGuWT6kFxGNI3Gcm-jbAHaHa?w=626&h=626&rs=1&pid=ImgDetMain" alt="Lounge Chair Model 5">
+        <h3>Model 5</h3>
+        <p class="desc">Non Adjustable High-back leather chair.</p>
+        <div class="price">₹22,499</div>
+        <button class="add-to-cart" data-name="Lounge Chair Model 5" data-price="22499">Add to Cart</button>
+      </div>
+  
+      <div class="product-block">
+        <img src="https://th.bing.com/th/id/OIP.4hM4F7ohY4Mc-Nvk6hBupAHaHa?rs=1&pid=ImgDetMain" alt="Lounge Chair Model 6">
+        <h3>Model 6</h3>
+        <p class="desc">Classic comfort wooden lounge chair.</p>
+        <div class="price">₹4,199</div>
+        <button class="add-to-cart" data-name="Lounge Chair Model 6" data-price="4199">Add to Cart</button>
+      </div>
+
+      <div class="product-block">
+        <img src="https://images.woodenstreet.de/image/data/wing-chairs/danon-wingback-chair/updated/blue-strip/product/1.jpg" alt="Lounge Chair Model 7">
+        <h3>Model 7</h3>
+        <p class="desc">Modern overhead lounge chair with breathable mesh and swivel base.</p>
+        <div class="price">₹32,999</div>
+        <button class="add-to-cart" data-name="Lounge Chair Model 7" data-price="32999">Add to Cart</button>
+      </div>
+  
+      <div class="product-block">
+        <img src="https://th.bing.com/th/id/OIP.oZ3rw1YCg2YZGzm89OMWeQHaHa?rs=1&pid=ImgDetMain" alt="Lounge Chair Model 8">
+        <h3>Model 8</h3>
+        <p class="desc">Morden simple lounge chair in strip pattern sit and feel comfortable.</p>
+        <div class="price">₹11,499</div>
+        <button class="add-to-cart" data-name="Lounge Chair Model 8" data-price="11499">Add to Cart</button>
+      </div>
+  
+      <div class="product-block">
+        <img src="https://th.bing.com/th/id/OIP.lGFELt-YlGxHNl1FZMv0dAHaHa?rs=1&pid=ImgDetMain" alt="Lounge Chair Model 9">
+        <h3>Model 9</h3>
+        <p class="desc">Condemo Modern Linen Fabric Indoor Chaise Lounge Chair in Smoke White</p>
+        <div class="price">₹13,299</div>
+        <button class="add-to-cart" data-name="Lounge Chair Model 9" data-price="13299">Add to Cart</button>
+      </div>
+  </div>
+  
+<script>
+  const buttons = document.querySelectorAll(".add-to-cart");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const name = button.dataset.name;
+      const price = parseInt(button.dataset.price);
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    });
+  });
+</script>
+
+</body>
+</html>

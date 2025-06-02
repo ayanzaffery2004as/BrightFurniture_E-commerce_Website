@@ -1,0 +1,289 @@
+<style>
+  .products-section {
+    background-color: #DCDFD6; /* Light grey background */
+    padding: 50px 20px;
+  }
+.product-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .product-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+  .product-card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .product-card h3 {
+    margin: 10px 0 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .products-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+  }
+
+  @media (max-width: 768px) {
+    .product-card {
+      width: 90%;
+    }
+  }
+
+  .explore-btn {
+  display: inline-block;
+  margin: 10px auto 20px;
+  padding: 8px 16px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #447F98;
+}
+
+</style>
+<head>
+  <link rel="preload" as="image" href="your-best-image.jpg">
+</head>
+
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="main">
+  <div class="navbar">
+    <div class="icon">
+      <h2 class="logo">
+        <img
+          src="https://img.freepik.com/premium-vector/sofa-furniture-logo-flat-icon_440309-167.jpg"
+          alt="Bright Logo"
+          class="logo-img"
+        />
+          <span class="logo-text">BRIGHT FURNITURE</span>
+        </h2>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="{% url 'company' %}">COMPANY</a></li>
+          <li><a href="{% url 'service' %}">SERVICE</a></li>
+          <li><a href="{% url 'reviews' %}">REVIEWS</a></li>
+          <li><a href="{% url 'cart' %}">CART</a></li>
+          <li><a href="{% url 'contact' %}">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content" style="position: relative; z-index: 1">
+      <h1>Live Luxuriously <br /><span>&</span> <br />Furnish Brightly</h1>
+      <p class="par">
+        Furnish your dreams with Bright Furniture. <br />premium quality,
+        stunning designs <br />and unmatched value delivered straight to your
+        home.
+      </p>
+
+      <div class="menu"></div>
+      <button class="cn">
+        <a href="{% url 'join' %}">JOIN US</a>
+      </button>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products-section" style="margin-top: 50px">
+      <h2>Explore Our Collections.</h2>
+
+      <div class="flip-gallery">
+        <!-- BED Models -->
+        <div class="product-section">
+          <div class="product-card">
+              <img
+                src="https://avatars.mds.yandex.net/i?id=17474d1a44a18eea4a57fc7c48c43ade_l-10878220-images-thumbs&ref=rim&n=13&w=800&h=560"
+                alt="Bed Model 1"
+                loading="lazy"
+              />
+              <h3>Bed</h3>
+            </a>
+            <a href="{% url 'beds' %}" class="explore-btn">Explore More</a>
+          </div>
+          <div class="product-card">
+              <img
+                src="https://cdn.gamma.app/zd0plk90c8ggwmy/generated-images/5-gHJbTYx7PzwqnY4lBYM.jpg"
+                alt="Sofa Model 1"
+              />
+              <h3>Sofa Sets</h3>
+            </a>
+            <a href="{% url 'sofas' %}" class="explore-btn">Explore More</a>
+          </div>
+          <div class="product-card">
+              <img
+                src="https://cdn.gamma.app/zd0plk90c8ggwmy/generated-images/WjIuuFjPtzr0kq0lzqmxs.jpg"
+                alt="Lounge Chair Model 1"
+              />
+              <h3>Lounge Chairs</h3>
+            </a>
+            <a href="{% url 'loungechairs' %}" class="explore-btn">Explore More</a>
+          </div>
+          <div class="product-card">
+              <img
+                src="https://cdn.gamma.app/zd0plk90c8ggwmy/generated-images/B4t8tJC4CAuG0FQXrB8gD.jpg"
+                alt="Dressing Table Model 1"
+              />
+              <h3>Dressing Tables</h3>
+            </a>
+            <a href="{% url 'dressingtables' %}" class="explore-btn">Explore More</a>
+          </div>
+          <div class="product-card">
+              <img
+                src="https://cdn.gamma.app/zd0plk90c8ggwmy/generated-images/2DqiNPFwZOzL0z0StsxTX.jpg"
+                alt="Wardrobe Model 1"
+              />
+              <h3>Wardrobes</h3>
+            </a>
+            <a href="{% url 'wardrobes' %}" class="explore-btn">Explore More</a>
+          </div>
+          <div class="product-card">
+              <img src="https://images.woodenstreet.de/image/data/study-tables-mdf/stanis-study-table/updated/flowery-wenge-frosty-white-finish/1.jpg" alt="Study Table Model 1" />
+              <h3>Study Tables</h3>
+            </a>
+            <a href="{% url 'studytables' %}" class="explore-btn">Explore More</a>
+          </div>
+          <div class="product-card">
+              <img src="https://www.checkcharm.com/wp-content/uploads/2023/12/image-1018.png" alt="Dining Table Model 1" />
+              <h3>Dining Tables</h3>
+             <a href="{% url 'diningtable' %}" class="explore-btn">Explore More</a>
+            </a>
+          </div>
+          <div class="product-card">
+              <img src="https://cdn.gamma.app/zd0plk90c8ggwmy/generated-images/n6_NA0coWxVslJv1npSPM.jpg" alt="Mattress Model 1" />
+              <h3>Mattresses</h3>
+              <a href="{% url 'mattresses' %}" class="explore-btn">Explore More</a>
+            </a>
+          </div>
+          <div class="product-card">
+              <img src="https://www.nilkamalsleep.com/cdn/shop/products/MDDRCLDFIBADJPLS2_3.jpg?v=1670393702" alt="Pillow Model 1" />
+              <h3>Bed Pillows</h3>
+              <a href="{% url 'bedpillows' %}" class="explore-btn">Explore More</a>
+            </a>
+          </div>
+          <div class="product-card">
+              <img src="https://img.freepik.com/premium-photo/blank-soft-pillow-sofa_947206-1481.jpg" alt="Pillow Model 1" />
+              <h3>Sofa Pillows</h3>
+              <a href="{% url 'sofapillows' %}" class="explore-btn">Explore More</a>
+            </a>
+          </div>
+          <div class="product-card">
+              <img src="https://img.freepik.com/premium-photo/3d-rendering-shoe-rack_1258715-74214.jpg" alt="Shoe Rack Model 1" />
+              <h3>Shoe Rack</h3>
+              <a href="{% url 'shoerack' %}" class="explore-btn">Explore More</a>
+            </a>
+          </div>
+          <div class="product-card">
+              <img src="https://images.livspace-cdn.com/w:1440/dpr:1/q:100/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-1657179080-NnXAg/tv-unit-1657603921-6y6tm/70-1663826761-A19yN.jpg" alt="TV Unit Model 1" />
+              <h3>TV Unit</h3>
+              <a href="{% url 'tvunit' %}" class="explore-btn">Explore More</a>
+            </a>
+          </div>
+        </div> <!-- closing product-section div -->
+      </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div id="chatbot-container">
+      <div id="chatbot-toggle">💬</div>
+      <div id="chatbot-box">
+        <div id="chatbot-header">Chat with BrightBot</div>
+        <div id="chatbot-messages"></div>
+        <div id="chatbot-input-area">
+          <input
+            type="text"
+            id="chatbot-input"
+            placeholder="Ask me anything..."
+          />
+          <button id="chatbot-send">Send</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const toggle = document.getElementById("chatbot-toggle");
+      const box = document.getElementById("chatbot-box");
+      const send = document.getElementById("chatbot-send");
+      const input = document.getElementById("chatbot-input");
+      const messages = document.getElementById("chatbot-messages");
+
+      toggle.addEventListener("click", () => {
+        box.style.display = box.style.display === "flex" ? "none" : "flex";
+      });
+
+      send.addEventListener("click", sendMessage);
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") sendMessage();
+      });
+
+      function sendMessage() {
+        const userInput = input.value.trim();
+        if (!userInput) return;
+
+        addMessage("You", userInput);
+        input.value = "";
+
+        // Simulated response (replace with real API if needed)
+        setTimeout(() => {
+          let reply = generateReply(userInput.toLowerCase());
+          addMessage("BrightBot", reply);
+        }, 500);
+      }
+
+      function addMessage(sender, text) {
+        const msg = document.createElement("div");
+        msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+        messages.appendChild(msg);
+        messages.scrollTop = messages.scrollHeight;
+      }
+
+      function generateReply(input) {
+        if (input.includes("bed"))
+          return "We have luxurious beds starting from ₹40,999!";
+        if (input.includes("sofa"))
+          return "Sofa sets? Absolutely! Modern and comfy – ₹25,499 onwards.";
+        if (input.includes("open") || input.includes("timing"))
+          return "We’re open every day from 9 AM to 8 PM.";
+        if (input.includes("location") || input.includes("where"))
+          return "We're at Sahu Chowk Pundag, Ranchi, Jharkhand.";
+        return "Sorry, I didn’t quite catch that. Try asking about beds, sofas, or timings!";
+      }
+    </script>
+
+    {% endblock content %}
+  </div>
+</div>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bright Furniture - Products</title>
+  <style>
+     body {
+        font-family: Arial, sans-serif;
+        background-color: #F8F6F0;
+        background-size: cover;
+        padding: 20px;
+        color: #000;
+      }
+  
+      .navbar {
+        background: rgba(0, 0, 0, 0.75);
+        padding: 12px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-radius: 0 0 15px 15px;
+      }
+  
+      .navbar .logo {
+        font-size: 2rem;
+        font-weight: 900;
+        color: #f1c40f;
+        text-decoration: none;
+      }
+  
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        padding: 0;
+      }
+  
+      .navbar ul li a {
+    color: #eee;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(145deg, #2e2e2e, #1a1a1a);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  
+  .navbar ul li a:hover {
+    transform: rotateX(10deg) rotateY(10deg) scale(1.05);
+    box-shadow: 0 12px 20px rgba(255, 255, 255, 0.2), 0 4px 30px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(145deg, #FFE000, #00F3FF);
+    color: #000;
+  }
+  
+  
+      h2 {
+        text-align: center;
+        color: #000;
+        margin: 40px 0 10px;
+        text-shadow: 1px 1px 3px #000;
+      }
+  
+      .product-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .product-block {
+    width: 350px;
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+  .product-block img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .product-block h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+  }
+
+  .desc {
+    font-size: 0.95em;
+    margin: 5px 0;
+    color: #444;
+  }
+
+  .price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2e86de;
+    margin: 5px 0;
+  }
+
+  .add-to-cart {
+    background-color: #2e86de;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .add-to-cart:hover {
+    background-color: #1b4f9c;
+  }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">Bright Furniture</a>
+    <ul>
+      <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">HOME</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'service' %}">SERVICE</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'reviews' %}">REVIEWS</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'cart' %}">CART</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <h2>[STUDY TABLES]</h2>
+  <div class="product-section">
+    <div class="product-block">
+      <img src="https://images.woodenstreet.de/image/data/study-table/brason-study-table-sheesham-wood/revised/honey/updated/1.jpg" alt="Study Table Model 1">
+      <h3>Model 1</h3>
+      <p class="desc">Compact study table with built-in shelves and cable management.</p>
+      <div class="price">₹3,499</div>
+      <button class="add-to-cart" data-name="Study Table Model 1" data-price="3499">Add to Cart</button>
+    </div>
+
+    <div class="product-block">
+      <img src="https://images.woodenstreet.de/image/data/study-tables-mdf/stanis-study-table/updated/flowery-wenge-frosty-white-finish/1.jpg" alt="Study Table Model 2">
+      <h3>Model 2</h3>
+      <p class="desc">Spacious study table with customizable interior and elegant design.</p>
+      <div class="price">₹4,499</div>
+      <button class="add-to-cart" data-name="Study Table Model 2" data-price="4499">Add to Cart</button>
+    </div>
+
+    <div class="product-block">
+      <img src="https://images.woodenstreet.de/image/data/study-tables-mdf/stanis-study-table/dark-maple/front.jpg" alt="Study Table Model 3">
+      <h3>Model 3</h3>
+      <p class="desc">Single door and sleek matte finish study table for modern rooms.</p>
+      <div class="price">₹8,299</div>
+      <button class="add-to-cart" data-name="Study Table Model 3" data-price="8299">Add to Cart</button>
+    </div>
+    <div class="product-block">
+        <img src="https://5.imimg.com/data5/SM/XX/GR/SELLER-5234392/25-1-.jpg" alt="Study Table Model 4">
+        <h3>Model 4</h3>
+        <p class="desc">Compact study table with built-in shelves and cable management.</p>
+        <div class="price">₹2,499</div>
+        <button class="add-to-cart" data-name="Study Table Model 4" data-price="2499">Add to Cart</button>
+    </div>
+     <div class="product-block">
+        <img src="https://www.inspiredelements.co.uk/wp-content/uploads/2020/12/Office-room-1.jpg" alt="Study Table Model 5">
+        <h3>Model 5</h3>
+        <p class="desc">Spacious study table with customizable interior and elegant design.</p>
+        <div class="price">₹9,999</div>
+        <button class="add-to-cart" data-name="Study Table Model 5" data-price="9999">Add to Cart</button>
+    </div>
+    <div class="product-block">
+        <img src="https://th.bing.com/th/id/OIP.lxQFS7Xtn6bUL1Fhx_p6JQAAAA?rs=1&pid=ImgDetMain" alt="Study Table Model 6">
+        <h3>Model 6</h3>
+        <p class="desc">Single door and sleek matte finish study table for modern rooms.</p>
+        <div class="price">₹6,299</div>
+        <button class="add-to-cart" data-name="Study Table Model 6" data-price="6299">Add to Cart</button>
+      </div>
+      <div class="product-block">
+        <img src="https://www.kroger.com/product/images/large/left/0697122443418" alt="Study Table Model 7">
+        <h3>Model 7</h3>
+        <p class="desc">Compact study table with built-in shelves and cable management.</p>
+        <div class="price">₹2,999</div>
+        <button class="add-to-cart" data-name="Study Table Model 7" data-price="2999">Add to Cart</button>
+      </div>
+      <div class="product-block">
+          <img src="https://images.woodenstreet.de/image/data/study-tables-mdf/alister-engineered-wood-study-table/flowery-wenge/1.jpg" alt="Study Table Model 8">
+          <h3>Model 8</h3>
+          <p class="desc">Spacious study table with customizable interior and elegant design.</p>
+          <div class="price">₹6,499</div>
+          <button class="add-to-cart" data-name="Study Table Model 8" data-price="6499">Add to Cart</button>
+      </div>
+      <div class="product-block">
+          <img src="https://www.sunshinehomepaintingservice.com/blog/uploads/images/202404/image_870x_663108f64f972.jpg" alt="Study Table Model 9">
+          <h3>Model 9</h3>
+          <p class="desc">S shape door and sleek matte finish study table for modern rooms.</p>
+          <div class="price">₹8,299</div>
+          <button class="add-to-cart" data-name="Study Table Model 9" data-price="8299">Add to Cart</button>
+      </div>  
+  </div>
+  </div>
+  <script>
+    const buttons = document.querySelectorAll(".add-to-cart");
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.dataset.name;
+        const price = parseInt(button.dataset.price);
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push({ name, price });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(`${name} added to cart!`);
+      });
+    });
+  </script>
+</body>
+</html>

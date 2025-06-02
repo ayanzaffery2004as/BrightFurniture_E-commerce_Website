@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bright Furniture - Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #6B8784;
+      background-size: cover;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .navbar {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 12px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-radius: 0 0 15px 15px;
+    }
+
+    .navbar .logo {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #f1c40f;
+      text-decoration: none;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      padding: 0;
+    }
+
+    .navbar ul li a {
+  color: #eee;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: linear-gradient(145deg, #2e2e2e, #1a1a1a);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.navbar ul li a:hover {
+  transform: rotateX(10deg) rotateY(10deg) scale(1.05);
+  box-shadow: 0 12px 20px rgba(255, 255, 255, 0.2), 0 4px 30px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(145deg, #FFE000, #00F3FF);
+  color: #000;
+}
+
+
+    h2 {
+      text-align: center;
+      color: #E7E7E7;
+      margin: 40px 0 10px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .product-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .product-card {
+  width: 350px; /* Set card width */
+  background-color: #f8f8f8;
+  color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+  width: 100%;       /* Match image width to card */
+  height: 350px;     /* Fixed height for uniformity */
+  object-fit: cover; /* Ensures image doesn't get squished or stretched */
+}
+
+    .product-card h3 {
+      margin: 10px 0 5px;
+      font-size: 1.3em;
+    }
+
+    .product-card .price {
+      font-size: 1.2em;
+      color: #2e86de;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+
+    .product-card button {
+      background-color: #2e86de;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 12px 0 18px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .product-card button:hover {
+      background-color: #1b4f9c;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">Bright Furniture</a>
+    <ul>
+      <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'service' %}">SERVICE</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'reviews' %}">REVIEWS</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'cart' %}">CART</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <h2>[BED PILLOWS]</h2>
+  <div class="product-section">
+    <div class="product-card">
+      <img src="https://www.nilkamalsleep.com/cdn/shop/products/MDDRCLDFIBADJPLS2_3.jpg?v=1670393702" alt="Pillow Model 1">
+      <h3>Model 1</h3>
+      <p class="desc">Soft foam pillow for peaceful, cloud-like sleep.</p>
+      <div class="price">₹399</div>
+      <button class="add-to-cart" data-name="Pillow Model 1" data-price="399">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://assets.wfcdn.com/im/32197866/resize-h310-w310%5Ecompr-r85/2423/242398212/memory-foam-medium-pillow.jpg" alt="Pillow Model 2">
+      <h3>Model 2</h3>
+      <p class="desc">Orthopedic support with medium firmness for back health.</p>
+      <div class="price">₹1,499</div>
+      <button class="add-to-cart" data-name="Pillow Model 2" data-price="1499">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/pillow/q/k/o/12-king-memory-pillow-grey-white-02-2-na-king-memory-pillow-grey-original-imagzg5fgcsmn3er.jpeg?q=70&crop=false" alt="Pillow Model 3">
+      <h3>Model 3</h3>
+      <p class="desc">Memory foam luxury pillow – adapts to your body shape.</p>
+      <div class="price">₹1,199</div>
+      <button class="add-to-cart" data-name="Pillow Model 3" data-price="1199">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://th.bing.com/th/id/R.5f7283264ad4b4fc10fcde1d7f5149aa?rik=8tdoQMeuoaFThQ&riu=http%3a%2f%2fcloudsleep.com.au%2fcdn%2fshop%2fproducts%2fherobanner2.webp%3fv%3d1707402512&ehk=MRdQhrR3VcdnxMRx9DIiqEBRVpRGnd7nBjkxDFoNmj0%3d&risl=&pid=ImgRaw&r=0" alt="Pillow Model 4">
+      <h3>Model 4</h3>
+      <p class="desc">Soft foam pillow for peaceful, cloud-like sleep.</p>
+      <div class="price">₹499</div>
+      <button class="add-to-cart" data-name="Pillow Model 4" data-price="499">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://th.bing.com/th/id/OIP.42wuIQ811650A5UT1aKqZQHaHa?rs=1&pid=ImgDetMain" alt="Pillow Model 5">
+      <h3>Model 5</h3>
+      <p class="desc">Orthopedic support with medium firmness for back health.</p>
+      <div class="price">₹1,999</div>
+      <button class="add-to-cart" data-name="Pillow Model 5" data-price="1999">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://img4.dhresource.com/webp/m/0x0/f3/albu/km/n/01/c77f1b38-ae96-4afa-9e38-d5ac45947291.jpg" alt="Pillow Model 6">
+      <h3>Model 6</h3>
+      <p class="desc">Memory foam luxury pillow – adapts to your body shape.</p>
+      <div class="price">₹1,599</div>
+      <button class="add-to-cart" data-name="Pillow Model 6" data-price="1599">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="https://th.bing.com/th/id/OIP.ddBak9NOhqJAuwJ3i5kX1gHaHa?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Pillow Model 7">
+      <h3>Model 7</h3>
+      <p class="desc">Soft foam pillow for peaceful, cloud-like sleep.</p>
+      <div class="price">₹599</div>
+      <button class="add-to-cart" data-name="Pillow Model 7" data-price="599">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://th.bing.com/th/id/OIP.WGr7y76Rx8C485ObxfiV1gHaHa?w=1499&h=1500&rs=1&pid=ImgDetMain" alt="Pillow Model 8">
+      <h3>Model 8</h3>
+      <p class="desc">Orthopedic support with medium firmness for back health.</p>
+      <div class="price">₹2,499</div>
+      <button class="add-to-cart" data-name="Pillow Model 8" data-price="2499">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/71oGIaUC9VL._AC_.jpg" alt="Pillow Model 9">
+      <h3>Model 9</h3>
+      <p class="desc">Memory foam luxury pillow – adapts to your body shape.</p>
+      <div class="price">₹1,799</div>
+      <button class="add-to-cart" data-name="Pillow Model 9" data-price="1799">Add to Cart</button>
+    </div>
+  </div>
+  
+  </div>
+  
+  <script>
+    const buttons = document.querySelectorAll(".add-to-cart");
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.dataset.name;
+        const price = parseInt(button.dataset.price);
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push({ name, price });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(`${name} added to cart!`);
+      });
+    });
+  </script>
+
+</body>
+</html>

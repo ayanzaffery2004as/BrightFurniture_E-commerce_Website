@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Warranty Support - Bright Furniture</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Base styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #EBE0C6;
+      padding-top: 70px; /* for sticky navbar */
+      color: #3e3e3e;
+    }
+
+    /* Sticky navbar with shadow & smooth color transitions */
+    .navbar {
+      background: linear-gradient(90deg, #b76e79, #95546b);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      font-weight: 600;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1050;
+      transition: background-color 0.3s ease;
+    }
+    .navbar.scrolled {
+      background: #95546bcc; /* Slightly transparent on scroll */
+      backdrop-filter: saturate(180%) blur(10px);
+    }
+    .navbar-brand {
+      color: #f8f8f8 !important;
+      font-size: 1.9rem;
+      letter-spacing: 2px;
+      transition: color 0.3s ease;
+      font-weight: 700;
+    }
+    .navbar-brand:hover {
+      color: #d9b08c !important;
+    }
+    .nav-link {
+      color: #f8f8f8 !important;
+      position: relative;
+      transition: color 0.3s ease;
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 3px;
+      bottom: 0;
+      left: 50%;
+      background: #d9b08c;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    .nav-link:hover {
+      color: #d9b08c !important;
+    }
+    .nav-link:hover::after {
+      width: 60%;
+    }
+    .navbar-toggler {
+      border-color: #d9b08c;
+      transition: transform 0.3s ease;
+    }
+    .navbar-toggler:hover {
+      transform: rotate(90deg);
+    }
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
+    /* Hero section with overlay text */
+    .hero {
+      background: url('https://puredryhellas.com/wp-content/uploads/elementor/thumbs/qtp3acVV3i8027M1Q5SFVPcCL9YZUF20170219140148-o4rvaka50qornxepuvoehkph8hyzsuqgdxgf160wsg.jpg') no-repeat center center/cover;
+      height: 400px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      margin-bottom: 40px;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+      transition: background 0.5s ease;
+    }
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 2.8rem;
+      font-weight: 700;
+      padding: 20px 40px;
+      border-radius: 15px;
+      background: rgba(217, 176, 140, 0.8);
+      box-shadow: 0 0 15px rgba(217, 176, 140, 0.6);
+      letter-spacing: 2px;
+      user-select: none;
+    }
+
+    /* Section title */
+    .section-title {
+      margin-top: 40px;
+      margin-bottom: 30px;
+      font-weight: 700;
+      color: #5b4b3a;
+      text-shadow: 1px 1px 4px #d9b08caa;
+    }
+    .section-title p {
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: #776958;
+    }
+
+    /* Info boxes with smooth shadow & hover effect */
+    .info-box {
+      background: #F2F1EF;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .info-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 10px 30px rgba(217, 176, 140, 0.6);
+    }
+    .info-box h4 {
+      color: #9b6e59;
+      font-weight: 700;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #d9b08c;
+      padding-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .info-box ul, .info-box ol {
+      padding-left: 20px;
+      color: #5b4b3a;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .info-box li {
+      margin-bottom: 8px;
+    }
+
+    /* Button style */
+    .btn-primary {
+      background: linear-gradient(45deg, #b76e79, #95546b);
+      border: none;
+      padding: 12px 35px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 30px;
+      box-shadow: 0 8px 20px rgba(183, 110, 121, 0.4);
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover, .btn-primary:focus {
+      background: linear-gradient(45deg, #d9b08c, #b27a7e);
+      box-shadow: 0 10px 30px rgba(217, 176, 140, 0.7);
+      transform: scale(1.05);
+      outline: none;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2f2a28;
+      color: #d9b08c;
+      padding: 25px 0;
+      text-align: center;
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+    footer p {
+      margin: 0;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+        padding: 15px 25px;
+      }
+      .info-box {
+        padding: 20px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="#">Bright Furniture</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'company' %}">COMPANY</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'service' %}">SERVICE</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'reviews' %}">REVIEWS</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'cart' %}">CART</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero">
+</div>
+
+<!-- Warranty Support Details -->
+<div class="container">
+  <div class="section-title text-center">
+    <h1>Your Satisfaction, Our Guarantee</h1>
+    <h2>Warranty Support</h2>
+    <p>We stand by the quality of our products with reliable warranty support.</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="info-box">
+        <h4>Warranty Coverage</h4>
+        <p>At Bright Furniture, we offer a <strong>1-year warranty</strong> on manufacturing defects for all our furniture products.</p>
+        <ul>
+          <li>Structural damage due to manufacturing faults</li>
+          <li>Defects in materials like wood, fabric, foam, or hardware</li>
+          <li>Issues with product assembly provided by Bright Furniture</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="info-box">
+        <h4>What is Not Covered</h4>
+        <p>Our warranty does not cover:</p>
+        <ul>
+          <li>Normal wear and tear</li>
+          <li>Damage caused by misuse, accidents, or improper maintenance</li>
+          <li>Damage due to exposure to extreme heat, moisture, or chemicals</li>
+          <li>Unauthorized repairs or modifications</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <div class="info-box">
+        <h4>How to Claim Warranty</h4>
+        <p>To initiate a warranty claim:</p>
+        <ol>
+          <li>Contact us via phone at <strong>8092543236</strong> or email us (brightfurniture2008@gmail.com).</li>
+          <li>Provide your purchase invoice, product photos, and a description of the issue.</li>
+          <li>Our team will review your request and schedule an inspection or service if eligible.</li>
+        </ol>
+        <p><strong>Note:</strong> Warranty service is limited to the original delivery location.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4 mb-5">
+    <a href="{% url 'contact' %}" class="btn btn-primary">Get Warranty Support</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Bright Furniture | Pundag Khaksi Tola, Ranchi, Jharkhand, Pincode 834004 | Call us: +91-8092543236</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>

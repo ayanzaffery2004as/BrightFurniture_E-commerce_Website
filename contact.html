@@ -1,0 +1,334 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us - Bright Furniture</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Base & Typography */
+    body {
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      padding: 30px 15px;
+      color: #3a3a3a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Navbar */
+    .navbar {
+  padding: 20px 40px;  /* more vertical and horizontal padding */
+}
+
+.navbar .logo {
+  font-size: 2.5rem; /* from 2rem to 2.5rem */
+}
+
+.navbar ul li a {
+  font-size: 1.2rem; /* from 1rem to 1.2rem */
+  padding: 12px 20px; /* bigger clickable area */
+}
+    .navbar {
+      background: linear-gradient(135deg, #0077B6, #F9AFBE);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 0px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: auto;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navbar ul li a {
+      font-weight: 600;
+      color: #004d40;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 1rem;
+    }
+    .navbar ul li a:hover {
+  transform: rotateX(10deg) rotateY(10deg) scale(1.05);
+  box-shadow: 0 12px 20px rgba(255, 255, 255, 0.2), 0 4px 30px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(145deg, #FFE000, #00F3FF);
+  color: #000;
+}
+
+    /* Heading */
+    h1 {
+      font-size: 3rem;
+      color: #004d40;
+      margin: 40px 0 30px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Contact Container */
+    .contact-container {
+      background: #ffffffdd;
+      max-width: 1200px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      display: flex;
+      flex-wrap: wrap;
+      padding: 30px 25px;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    /* Info and Form columns */
+    .contact-info, .contact-form {
+      flex: 1 1 320px; /* reduced from 420px */
+      min-width: 280px; /* lowered min-width */
+    }
+
+    /* Info Styling */
+    .contact-info h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: #00796b;
+      border-bottom: 3px solid #004d40;
+      padding-bottom: 8px;
+    }
+
+    .contact-info p {
+      font-size: 1.1rem;
+      margin: 14px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #333;
+    }
+    .contact-info i {
+      color: #00796b;
+      font-size: 1.3rem;
+      min-width: 25px;
+      text-align: center;
+    }
+
+    /* Social Icons */
+    .social-icons {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+    .social-icons a {
+      color: #00796b;
+      font-size: 2rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+      border-radius: 50%;
+      padding: 8px;
+      background: #e0f2f1;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    .social-icons a:hover {
+      color: #004d40;
+      background: #FFCCD5;
+      transform: scale(1.3) rotate(10deg);
+    }
+
+    /* Form Styling */
+    .contact-form h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: #00796b;
+      border-bottom: 3px solid #004d40;
+      padding-bottom: 8px;
+    }
+
+    form label {
+      font-weight: 600;
+      margin-top: 15px;
+      color: #004d40;
+      display: block;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px 5px;
+      margin-top: 8px;
+      font-size: 1rem;
+      border: 2px solid #48CAE4;
+      border-radius: 12px;
+      resize: none;
+      transition: border-color 0.3s ease;
+      background: #FFCCD5;
+      color: #004d40;
+      font-weight: 500;
+      box-shadow: inset 2px 2px 6px #b2dfdbaa;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #00796b;
+      outline: none;
+      box-shadow: 0 0 8px #00796baa;
+      background: #ffffff;
+    }
+
+    /* Submit Button */
+    .contact-form button {
+      margin-top: 25px;
+      margin-left: auto;
+      padding: 15px 0;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color:  #E4EBF7;
+      background: linear-gradient(45deg, #00796b, #004d40);
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(0,121,107,0.6);
+      transition: background 0.3s ease, transform 0.3s ease;
+      user-select: none;
+    }
+    .contact-form button:hover {
+      background: linear-gradient(45deg, #C9184A, #00796b);
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0,77,64,0.9);
+    }
+
+    /* Map container */
+    .map-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 50px auto 0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      width: 100%;
+      max-width: 1200px;
+      text-align: center;
+      padding: 20px 0;
+      background-color: #F9AFBE;
+      color: #006400;
+      font-weight: 600;
+      border-radius: 0 0 20px 20px;
+      user-select: none;
+      letter-spacing: 1.2px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 900px) {
+      .contact-container {
+        flex-direction: column;
+        padding: 35px 25px;
+      }
+      .contact-info, .contact-form {
+        flex: 1 1 100%;
+        margin: 0 0 30px 0;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="{% url 'home' %}">HOME</a></li>
+      <li><a href="{% url 'company' %}">COMPANY</a></li>
+      <li><a href="{% url 'service' %}">SERVICE</a></li>
+      <li><a href="{% url 'products' %}">PRODUCTS</a></li>
+      <li><a href="{% url 'cart' %}">CART</a></li>
+    </ul>
+  </nav>
+
+  <!-- Heading -->
+  <h1>Contact Bright Furniture</h1>
+
+  <!-- Contact Section -->
+  <div class="contact-container">
+    <div class="contact-info">
+      <h2>Visit Us</h2>
+      <p><i class="fas fa-store"></i>Bright Furniture</p>
+      <p><i class="fas fa-map-marker-alt"></i>Pundag Khaksi Tola, Ranchi, Jharkhand, 834004</p>
+      <p><i class="fas fa-phone"></i>8092543236</p>
+      <p><i class="fas fa-envelope"></i>brightfurniture23@gmail.com</p>
+      <p><i class="fas fa-clock"></i>Mon - Fri: 9:00 AM - 6:00 PM</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/12GbaJ1nkin/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=lb2fnbn" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/+918092543236" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram-plane"></i></a>
+        <a href="http://wa.me/+918092543236" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form method="POST" novalidate>
+        {% csrf_token %}
+        <label for="id_username">Enter Your Name</label>
+        <input type="text" placeholder="Your Name" required name="USERNAME" id="id_username" />
+
+        <label for="id_email">Your Email</label>
+        <input type="email" placeholder="Your Email" required name="EMAIL" id="id_email" />
+
+        <label for="id_phone">Your Phone Number</label>
+        <input type="tel" placeholder="Your Phone Number" required name="PHONENUMBER" id="id_phone" />
+
+        <label for="id_message">Your Message</label>
+        <textarea rows="5" placeholder="Your Message" required name="MESSAGE" id="id_message"></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps?q=Pundag+Khaksi+Tola+Ranchi+Jharkhand+834004&output=embed"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+
+ <!-- Footer -->
+<footer>
+  <div class="container">
+    &copy; 2025 Bright Furniture | Designed with ❤️ for your comfort
+  </div>
+</footer>
+
+
+</body>
+</html>
+{% endblock content %}

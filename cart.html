@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart - Bright Furniture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #D2DCE6;
+      color: #2c3e50;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #1a2a6c;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #ecf0f1;
+    }
+
+    .item-details {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .item-info h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .price {
+      font-weight: 600;
+      color: #27ae60;
+      font-size: 1.1rem;
+    }
+
+    .remove-btn {
+      background: #5D768B;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .remove-btn:hover {
+      background: #c0392b;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #2ecc71;
+    }
+
+    .checkout-btn {
+      background: #27ae60;
+      color: white;
+      padding: 14px 30px;
+      border: none;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 30px;
+      float: right;
+    }
+
+    .checkout-btn:hover {
+      background: #CAA290;
+    }
+
+    .empty-message {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #7f8c8d;
+      padding: 50px 0;
+    }
+
+    .continue-shopping {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      background: #CAA290;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+    }
+
+    .continue-shopping:hover {
+      background: #27ae60;
+    }
+
+    @media (max-width: 600px) {
+      .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .checkout-btn {
+        width: 100%;
+        float: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Your Cart - Bright Furniture</h1>
+    <div id="cart-container"></div>
+    <a href="/products" class="continue-shopping">← Continue Shopping</a>
+  </div>
+
+  <script>
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const container = document.getElementById("cart-container");
+
+      container.innerHTML = "";
+
+      if (cart.length === 0) {
+        container.innerHTML = `<div class="empty-message">Your cart is empty. Add something stylish!</div>`;
+        return;
+      }
+
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        total += item.price;
+
+        const itemDiv = document.createElement("div");
+        itemDiv.className = "cart-item";
+        itemDiv.innerHTML = `
+          <div class="item-details">
+            <img src="${item.image || 'https://via.placeholder.com/90'}" alt="${item.name}">
+            <div class="item-info">
+              <h3>${item.name}</h3>
+              <div class="price">₹${item.price.toLocaleString()}</div>
+            </div>
+          </div>
+          <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        `;
+        container.appendChild(itemDiv);
+      });
+
+      const totalDiv = document.createElement("div");
+      totalDiv.className = "total";
+      totalDiv.textContent = `Total: ₹${total.toLocaleString()}`;
+      container.appendChild(totalDiv);
+
+      const checkoutBtn = document.createElement("button");
+      checkoutBtn.className = "checkout-btn";
+      checkoutBtn.textContent = "Proceed to Checkout";
+      checkoutBtn.onclick = () => {
+        window.location.href = "/checkout";
+      };
+      container.appendChild(checkoutBtn);
+    }
+
+    function removeItem(index) {
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      loadCart();
+    }
+
+    loadCart();
+  </script>
+
+<script>
+  const buttons = document.querySelectorAll(".add-to-cart");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const name = button.dataset.name;
+      const price = parseInt(button.dataset.price);
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    });
+  });
+</script>
+
+</body>
+</html>
