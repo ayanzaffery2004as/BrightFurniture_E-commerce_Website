@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bright Furniture - Products</title>
+  <style>
+     body {
+        font-family: Arial, sans-serif;
+        background-color: #F0FFF0;
+        background-size: cover;
+        padding: 20px;
+        color: #000;
+      }
+  
+      .navbar {
+        background: rgba(0, 0, 0, 0.75);
+        padding: 12px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-radius: 0 0 15px 15px;
+      }
+  
+      .navbar .logo {
+        font-size: 2rem;
+        font-weight: 900;
+        color: #f1c40f;
+        text-decoration: none;
+      }
+  
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        padding: 0;
+      }
+  
+      .navbar ul li a {
+    color: #eee;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(145deg, #2e2e2e, #1a1a1a);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  
+  .navbar ul li a:hover {
+    transform: rotateX(10deg) rotateY(10deg) scale(1.05);
+    box-shadow: 0 12px 20px rgba(255, 255, 255, 0.2), 0 4px 30px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(145deg, #FFE000, #00F3FF);
+    color: #000;
+  }
+  
+  
+      h2 {
+        text-align: center;
+        color: #000080;
+        margin: 40px 0 10px;
+        text-shadow: 1px 1px 3px #d7f3ee;
+      }
+  
+      .product-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .product-block {
+    width: 350px;
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+  .product-block img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .product-block h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+  }
+
+  .desc {
+    font-size: 0.95em;
+    margin: 5px 0;
+    color: #444;
+  }
+
+  .price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2e86de;
+    margin: 5px 0;
+  }
+
+  .add-to-cart {
+    background-color: #2e86de;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .add-to-cart:hover {
+    background-color: #1b4f9c;
+  }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">Bright Furniture</a>
+    <ul>
+      <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'service' %}">SERVICE</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'reviews' %}">REVIEWS</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'cart' %}">CART</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">CONTACT</a></li>
+    </ul>
+  </nav>
+  <h2>[TELEVISION UNIT]</h2>
+<div class="product-section">
+  <div class="product-block">
+    <img src="https://images.woodenstreet.de/image/cache/data/bookshelves-mdf/house-of-storage-booshelf/exotic-teak/updated/2-810x702.jpg" alt="TV Unit Model 1">
+    <h3>Model 1</h3>
+    <p class="desc">Modern TV unit with storage.</p>
+    <div class="price">₹8,999</div>
+    <button class="add-to-cart" data-name="TV Unit Model 1" data-price="8999">Add to Cart</button>
+  </div>
+  
+  <div class="product-block">
+    <img src="https://images.livspace-cdn.com/w:1440/dpr:1/q:100/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-1657179080-NnXAg/tv-unit-1657603921-6y6tm/70-1663826761-A19yN.jpg" alt="TV Unit Model 2">
+    <h3>Model 2</h3>
+    <p class="desc">5-tier open TV unit.</p>
+    <div class="price">₹15,999</div>
+    <button class="add-to-cart" data-name="TV Unit Model 2" data-price="15999">Add to Cart</button>
+  </div>
+
+  <div class="product-block">
+    <img src="https://netrinoimages.s3.eu-west-2.amazonaws.com/2019/12/08/664594/389258/modern_tv_cabinet_3d_model_c4d_max_obj_fbx_ma_lwo_3ds_3dm_stl_4027129.jpg" alt="TV Unit Model 3">
+    <h3>Model 3</h3>
+    <p class="desc">3-tier modern style TV unit.</p>
+    <div class="price">₹16,999</div>
+    <button class="add-to-cart" data-name="TV Unit Model 3" data-price="16999">Add to Cart</button>
+  </div>
+  <div class="product-block">
+    <img src="https://images.woodenstreet.de/image/data/tv-units/chappell-tv-unit-revised/honey/updated/1.jpg" alt="TV Unit Model 4">
+    <h3>Model 4</h3>
+    <p class="desc">Modern TV unit with storage.</p>
+    <div class="price">₹9,999</div>
+    <button class="add-to-cart" data-name="TV Unit Model 4" data-price="9999">Add to Cart</button>
+  </div>
+
+  <div class="product-block">
+    <img src="https://m.media-amazon.com/images/I/71paFZqucQL._SL1500_.jpg" alt="TV Unit Model 5">
+    <h3>Model 5</h3>
+    <p class="desc">5-tier open TV unit.</p>
+    <div class="price">₹12,199</div>
+    <button class="add-to-cart" data-name="TV Unit Model 5" data-price="12199">Add to Cart</button>
+  </div>
+
+  <div class="product-block">
+    <img src="https://3dbrute.com/wp-content/uploads/full/2022/01/tv-wall-set-241.jpg" alt="TV Unit Model 6">
+    <h3>Model 6</h3>
+    <p class="desc">3-tier modern style TV unit.</p>
+    <div class="price">₹21,999</div>
+    <button class="add-to-cart" data-name="TV Unit Model 6" data-price="21999">Add to Cart</button>
+  </div>
+  <div class="product-block">
+    <img src="https://images.woodenstreet.de/image/data/tv-units-mdf/daisy-tv-unit/exotic-teak/updated/2.jpg" alt="TV Unit Model 7">
+    <h3>Model 7</h3>
+    <p class="desc">Modern TV unit with storage.</p>
+    <div class="price">₹7,999</div>
+    <button class="add-to-cart" data-name="TV Unit Model 7" data-price="7999">Add to Cart</button>
+  </div>
+
+  <div class="product-block">
+    <img src="https://images.livspace-cdn.com/w:1440/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/ond-2022-1664872805-f0ijv/tv-1664873091-1L8tV/5-1-2-1-1665123413-y29oN.jpg" alt="TV Unit Model 8">
+    <h3>Model 8</h3>
+    <p class="desc">5-tier open TV unit.</p>
+    <div class="price">₹11,150</div>
+    <button class="add-to-cart" data-name="TV Unit Model 8" data-price="11150">Add to Cart</button>
+  </div>
+
+  <div class="product-block">
+    <img src="https://images.livspace-cdn.com/w:1920/plain/https://d3gq2merok8n5r.cloudfront.net/abhinav/ond-1634120396-Obfdc/jas-1657179080-NnXAg/tv-unit-1657603921-6y6tm/36-1660296303-Trjma.jpg" alt="TV Unit Model 9">
+    <h3>Model 9</h3>
+    <p class="desc">3-tier modern style TV unit.</p>
+    <div class="price">₹13,399</div>
+    <button class="add-to-cart" data-name="TV Unit Model 9" data-price="13399">Add to Cart</button>
+  </div>
+</div>
+<script>
+  const buttons = document.querySelectorAll(".add-to-cart");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const name = button.dataset.name;
+      const price = parseInt(button.dataset.price);
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    });
+  });
+</script>
+
+</body>
+</html>
