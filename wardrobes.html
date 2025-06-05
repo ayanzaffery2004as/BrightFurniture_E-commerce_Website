@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bright Furniture - Products</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e1bee7;
+        background-size: cover;
+        padding: 20px;
+        color: #000;
+      }
+  
+      .navbar {
+        background: rgba(0, 0, 0, 0.75);
+        padding: 12px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-radius: 0 0 15px 15px;
+      }
+  
+      .navbar .logo {
+        font-size: 2rem;
+        font-weight: 900;
+        color: #f1c40f;
+        text-decoration: none;
+      }
+  
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        padding: 0;
+      }
+  
+      .navbar ul li a {
+    color: #eee;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(145deg, #2e2e2e, #1a1a1a);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+  
+  .navbar ul li a:hover {
+    transform: rotateX(10deg) rotateY(10deg) scale(1.05);
+    box-shadow: 0 12px 20px rgba(255, 255, 255, 0.2), 0 4px 30px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(145deg, #FFE000, #00F3FF);
+    color: #000;
+  }
+  
+  
+      h2 {
+        text-align: center;
+        color: #000080;
+        margin: 40px 0 10px;
+        text-shadow: 1px 1px 3px #d7f3ee;
+      }
+  
+      .product-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .product-block {
+    width: 350px;
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+  .product-block img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .product-block h3 {
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+  }
+
+  .desc {
+    font-size: 0.95em;
+    margin: 5px 0;
+    color: #444;
+  }
+
+  .price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2e86de;
+    margin: 5px 0;
+  }
+
+  .add-to-cart {
+    background-color: #2e86de;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .add-to-cart:hover {
+    background-color: #1b4f9c;
+  }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">Bright Furniture</a>
+    <ul>
+      <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'service' %}">SERVICE</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'reviews' %}">REVIEWS</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'cart' %}">CART</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">CONTACT</a></li>
+    </ul>
+  </nav>
+  <h2>[WARDROBES SETS]</h2>
+  <div class="product-section">
+    <div class="product-block">
+      <img src="https://cdn.gamma.app/zd0plk90c8ggwmy/generated-images/EwMpUjvJbfxikEVFzT4TP.jpg" alt="Wardrobe Model 1">
+      <h3>Model 1</h3>
+      <p class="desc">Three-door elegance lockable drawers.</p>
+      <div class="price">₹12,999</div>
+      <button class="add-to-cart" data-name="Wardrobe Model 1" data-price="12999">Add to Cart</button>
+    </div>
+
+    <div class="product-block">
+      <img src="https://s.alicdn.com/@sc04/kf/Hcc01930201c746ea9089bf372b56876c1.jpg_300x300.jpg" alt="Wardrobe Model 2">
+      <h3>Model 2</h3>
+      <p class="desc">Spacious wardrobe with customizable interior and elegant design.</p>
+      <div class="price">₹9,499</div>
+      <button class="add-to-cart" data-name="Wardrobe Model 2" data-price="9499">Add to Cart</button>
+    </div>
+
+    <div class="product-block">
+      <img src="https://cdn.gamma.app/zd0plk90c8ggwmy/generated-images/2DqiNPFwZOzL0z0StsxTX.jpg" alt="Wardrobe Model 3">
+      <h3>Model 3</h3>
+      <p class="desc">Sliding doors and sleek matte finish for modern rooms.</p>
+      <div class="price">₹24,999</div>
+      <button class="add-to-cart" data-name="Wardrobe Model 3" data-price="24999">Add to Cart</button>
+    </div>
+    <div class="product-block">
+      <img src="https://assets.wfcdn.com/im/35173944/compr-r85/2791/279115009/Reia+Three-door+Wardrobe+with+Full-length+Mirror%2C+Lockable+Drawer%2C+A+Hanger+Rod.jpg" alt="Wardrobe Model 4">
+      <h3>Model 4</h3>
+      <p class="desc">Three-door elegance lockable drawers.</p>
+      <div class="price">₹9,999</div>
+      <button class="add-to-cart" data-name="Wardrobe Model 4" data-price="9999">Add to Cart</button>
+    </div>
+
+    <div class="product-block">
+      <img src="https://media.designcafe.com/wp-content/uploads/2019/12/17054114/Making-Practical-Choices-for-Interior-Material-1024x1024.jpg" alt="Wardrobe Model 5">
+      <h3>Model 5</h3>
+      <p class="desc">Spacious wardrobe with customizable interior and elegant design.</p>
+      <div class="price">₹29,999</div>
+      <button class="add-to-cart" data-name="Wardrobe Model 5" data-price="29999">Add to Cart</button>
+    </div>
+
+    <div class="product-block">
+      <img src="https://image.made-in-china.com/2f0j00EsnWtZlPnKkI/New-Design-Luxury-Walk-in-Closet-Wardrobe-Design-Modular-Furniture-Laminate-Solid-Wood-Panel-Bedroom-Modern-Wardrobe17.jpg" alt="Wardrobe Model 6">
+      <h3>Model 6</h3>
+      <p class="desc">Sliding doors and sleek matte finish for modern rooms.</p>
+      <div class="price">₹16,999</div>
+      <button class="add-to-cart" data-name="Wardrobe Model 6" data-price="16999">Add to Cart</button>
+    </div>
+    <div class="product-block">
+      <img src="https://damro.lk/wp-content/uploads/2020/02/queenston-suite-wardrobe-548x450.jpg" alt="Wardrobe Model 7">
+      <h3>Model 7</h3>
+      <p class="desc">Three-door elegance lockable drawers.</p>
+      <div class="price">₹7,999</div>
+      <button class="add-to-cart" data-name="Wardrobe Model 7" data-price="7999">Add to Cart</button>
+    </div>
+
+    <div class="product-block">
+      <img src="https://img.freepik.com/premium-photo/wardrobe-design-highquality-customizable-assets-professional-interior-fashion-presentation_655090-1015150.jpg" alt="Wardrobe Model 8">
+      <h3>Model 8</h3>
+      <p class="desc">Spacious wardrobe with customizable interior and elegant design.</p>
+      <div class="price">₹19,499</div>
+      <button class="add-to-cart" data-name="Wardrobe Model 8" data-price="19499">Add to Cart</button>
+    </div>
+
+    <div class="product-block">
+      <img src="https://images.woodenstreet.de/image/data/spacewood/kosmo-universal-2-door-sliding-wardrobe-flowery-wenge-finish/1.jpg" alt="Wardrobe Model 9">
+      <h3>Model 9</h3>
+      <p class="desc">Sliding doors and sleek matte finish for modern rooms.</p>
+      <div class="price">₹14,999</div>
+      <button class="add-to-cart" data-name="Wardrobe Model 9" data-price="14999">Add to Cart</button>
+    </div>
+  </div>
+<script>
+  const buttons = document.querySelectorAll(".add-to-cart");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const name = button.dataset.name;
+      const price = parseInt(button.dataset.price);
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    });
+  });
+</script>
+
+</body>
+</html>
